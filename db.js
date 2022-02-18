@@ -1,5 +1,5 @@
 import level from 'level'
 import { config } from './config.js'
 
-const db = level(config.mqtt.dbPath)
+const db = level(config.mqtt.db)
 export default db
