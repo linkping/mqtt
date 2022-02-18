@@ -24,8 +24,8 @@ aedes.authenticate = (client, username, password, callback) => {
 
 const server = net.createServer(aedes.handle)
 
-server.listen(config.mqtt.port, () => {
-  log.info(`broker listening on port ${config.mqtt.port}`)
+server.listen(config.mqtt.port, config.mqtt.host, () => {
+  log.info(`broker listening on ${config.mqtt.host}:${config.mqtt.port}`)
 })
 
 aedes.on('subscribe', (subscriptions, client) => {
